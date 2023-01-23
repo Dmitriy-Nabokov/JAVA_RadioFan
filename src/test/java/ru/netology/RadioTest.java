@@ -89,7 +89,6 @@ public class RadioTest {
         Assertions.assertEquals(expected, actual);
     }
 
-
     @Test
     public void shouldSetNextVolume() {     // Проверяем переключение громкости на следующую
         Radio radio = new Radio();
