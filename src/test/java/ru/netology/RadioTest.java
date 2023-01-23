@@ -17,9 +17,9 @@ public class RadioTest {
     }
 
     @Test
-    public void shouldNotSetStationAboveMax() {          // Проверяем ограничение на задание станции ниже предела
+    public void shouldNotSetStationAboveMax() {          // Проверяем ограничение на задание станции выше предела
         Radio radio = new Radio();
-        radio.setCurrentStation(10);
+        radio.setCurrentStation(15);
         radio.setToMaxStation();
 
         int expected = 9;
@@ -29,9 +29,9 @@ public class RadioTest {
     }
 
     @Test
-    public void shouldNotSetStationBelowMin() {          // Проверяем ограничение на задание станции выше предела
+    public void shouldNotSetStationBelowMin() {          // Проверяем ограничение на задание станции ниже предела
         Radio radio = new Radio();
-        radio.setCurrentStation(-5);
+        radio.setCurrentStation(-7);
         radio.setToMinStation();
 
         int expected = 0;
@@ -89,27 +89,6 @@ public class RadioTest {
         Assertions.assertEquals(expected, actual);
     }
 
-    @Test
-    public void shouldNotTapStationAboveMax() {       // Проверяем ограничение на переключение станции выше предела
-        Radio radio = new Radio();
-        radio.setToMaxStation();
-
-        int expected = 9;
-        int actual = radio.currentStation;
-
-        Assertions.assertEquals(expected, actual);
-    }
-
-    @Test
-    public void shouldNotTapStationBelowMin() {       // Проверяем ограничение на переключение станции ниже предела
-        Radio radio = new Radio();
-        radio.setToMinStation();
-
-        int expected = 0;
-        int actual = radio.currentStation;
-
-        Assertions.assertEquals(expected, actual);
-    }
 
     @Test
     public void shouldSetNextVolume() {     // Проверяем переключение громкости на следующую
