@@ -6,11 +6,11 @@ import org.junit.jupiter.api.Test;
 public class RadioTest {
 
     @Test
-    public void shouldSetStation() {          // Проверяем заданную станцию
-        Radio radio = new Radio();
-        radio.setCurrentStation(5);
+    public void shouldSetStation() {                     // Проверяем заданную станцию
+        Radio radio = new Radio(20);
+        radio.setCurrentStation(14);
 
-        int expected = 5;
+        int expected = 14;
         int actual = radio.getCurrentStation();
 
         Assertions.assertEquals(expected, actual);
@@ -18,11 +18,11 @@ public class RadioTest {
 
     @Test
     public void shouldNotSetStationAboveMax() {          // Проверяем ограничение на задание станции выше предела
-        Radio radio = new Radio();
-        radio.setCurrentStation(15);
+        Radio radio = new Radio(20);
+        radio.setCurrentStation(23);
         radio.setToMaxStation();
 
-        int expected = 9;
+        int expected = 19;
         int actual = radio.getCurrentStation();
 
         Assertions.assertEquals(expected, actual);
@@ -31,7 +31,7 @@ public class RadioTest {
     @Test
     public void shouldNotSetStationBelowMin() {          // Проверяем ограничение на задание станции ниже предела
         Radio radio = new Radio();
-        radio.setCurrentStation(-7);
+        radio.setCurrentStation(-1);
         radio.setToMinStation();
 
         int expected = 0;
