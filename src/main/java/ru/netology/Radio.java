@@ -13,10 +13,12 @@ public class Radio {
     private int currentVolume = minVolume;                 // Текущая громкость
 
     public Radio() {
+
         maxStation = 9;
     }
 
     public Radio(int stationCount) {
+
         maxStation = stationCount - 1;
     }
 
@@ -55,10 +57,12 @@ public class Radio {
 
 
     public int getCurrentStation() {                          // Геттер текущей радио станции
+
         return currentStation;
     }
 
     public int getCurrentVolume() {                           // Геттер текущей громкости
+
         return currentVolume;
     }
 

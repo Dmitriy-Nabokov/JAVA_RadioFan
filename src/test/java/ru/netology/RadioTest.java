@@ -8,9 +8,9 @@ public class RadioTest {
     @Test
     public void shouldSetStation() {                     // Проверяем заданную станцию
         Radio radio = new Radio(20);
-        radio.setCurrentStation(14);
+        radio.setCurrentStation(19);
 
-        int expected = 14;
+        int expected = 19;
         int actual = radio.getCurrentStation();
 
         Assertions.assertEquals(expected, actual);
@@ -116,10 +116,10 @@ public class RadioTest {
     @Test
     public void shouldNotSetVolumeAboveMax() {     // Проверяем ограничение переключения громкости выше максимума
         Radio radio = new Radio();
-        radio.setCurrentVolume(10);
+        radio.setCurrentVolume(100);
         radio.increaseVolume();
 
-        int expected = 10;
+        int expected = 100;
         int actual = radio.getCurrentVolume();
 
         Assertions.assertEquals(expected, actual);
